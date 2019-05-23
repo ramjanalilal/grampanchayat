@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include grampanchayat *.css
+recursive-include grampanchayat *.csv
+recursive-include grampanchayat *.html
+recursive-include grampanchayat *.ico
+recursive-include grampanchayat *.js
+recursive-include grampanchayat *.json
+recursive-include grampanchayat *.md
+recursive-include grampanchayat *.png
+recursive-include grampanchayat *.py
+recursive-include grampanchayat *.svg
+recursive-include grampanchayat *.txt
+recursive-exclude grampanchayat *.pyc
