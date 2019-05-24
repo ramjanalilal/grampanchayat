@@ -1,0 +1,128 @@
+{
+ "creation": "2019-05-24 17:17:45.421607",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "c_house_tax",
+  "p_house_tax",
+  "c_water_tax",
+  "p_water_tax",
+  "c_sp_water_tax",
+  "p_sp_water_tax",
+  "c_cleaning_tax",
+  "p_cleaning_tax",
+  "c_sewer_tax",
+  "pre_sewer_tax",
+  "c_light_tax",
+  "p_light_tax",
+  "c_taluka_tax",
+  "p_taluka_tax",
+  "c_dist_tax",
+  "p_dist_tax",
+  "c_total_tax",
+  "p_total_tax"
+ ],
+ "fields": [
+  {
+   "fieldname": "c_house_tax",
+   "fieldtype": "Float",
+   "label": "Current House Tax"
+  },
+  {
+   "fieldname": "p_house_tax",
+   "fieldtype": "Float",
+   "label": "Previous House Tax"
+  },
+  {
+   "fieldname": "c_water_tax",
+   "fieldtype": "Float",
+   "label": "Current Water Tax"
+  },
+  {
+   "fieldname": "p_water_tax",
+   "fieldtype": "Float",
+   "label": "Previous Water Tax"
+  },
+  {
+   "fieldname": "c_sp_water_tax",
+   "fieldtype": "Float",
+   "label": "Current Sp Water Tax"
+  },
+  {
+   "fieldname": "p_sp_water_tax",
+   "fieldtype": "Float",
+   "label": "Previous Sp Water Tax"
+  },
+  {
+   "fieldname": "c_cleaning_tax",
+   "fieldtype": "Float",
+   "label": "Current Cleaning Tax"
+  },
+  {
+   "fieldname": "p_cleaning_tax",
+   "fieldtype": "Float",
+   "label": "Previous Cleaning Tax"
+  },
+  {
+   "fieldname": "c_sewer_tax",
+   "fieldtype": "Float",
+   "label": "Current Sewer Tax"
+  },
+  {
+   "fieldname": "pre_sewer_tax",
+   "fieldtype": "Float",
+   "label": "Previous Sewer Tax"
+  },
+  {
+   "fieldname": "c_light_tax",
+   "fieldtype": "Float",
+   "label": "Current  Light Tax"
+  },
+  {
+   "fieldname": "p_light_tax",
+   "fieldtype": "Float",
+   "label": "Previous  Light Tax"
+  },
+  {
+   "fieldname": "c_taluka_tax",
+   "fieldtype": "Float",
+   "label": "Current  Taluka Tax"
+  },
+  {
+   "fieldname": "p_taluka_tax",
+   "fieldtype": "Float",
+   "label": "Previous  Taluka Tax"
+  },
+  {
+   "fieldname": "c_dist_tax",
+   "fieldtype": "Float",
+   "label": "Current  Dist Tax"
+  },
+  {
+   "fieldname": "p_dist_tax",
+   "fieldtype": "Float",
+   "label": "Previous  Dist Tax"
+  },
+  {
+   "fieldname": "c_total_tax",
+   "fieldtype": "Float",
+   "label": "Current  Total Tax"
+  },
+  {
+   "fieldname": "p_total_tax",
+   "fieldtype": "Float",
+   "label": "Previous  Total Tax"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-05-24 17:45:10.092579",
+ "modified_by": "Administrator",
+ "module": "GramPanchayat",
+ "name": "Tax_Akarni",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "track_changes": 1
+}
