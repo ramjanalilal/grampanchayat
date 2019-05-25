@@ -1,40 +1,46 @@
 {
- "creation": "2019-05-24 17:17:45.421607",
+ "creation": "2019-05-25 10:48:41.508028",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "tax_id",
+  "tax",
   "amount",
   "effective_from",
   "effective_to"
  ],
  "fields": [
   {
-   "fieldname": "tax_id",
-   "fieldtype": "Data",
-   "label": "Tax ID"
+   "fieldname": "tax",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tax",
+   "options": "Tax"
   },
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount"
   },
   {
    "fieldname": "effective_from",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Effective From"
   },
   {
    "fieldname": "effective_to",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Effective To"
   }
  ],
  "istable": 1,
- "modified": "2019-05-25 10:47:18.659900",
+ "modified": "2019-05-25 10:50:43.305359",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
- "name": "Tax_Akarni",
+ "name": "Property Tax",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,

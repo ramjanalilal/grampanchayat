@@ -1,50 +1,22 @@
 {
- "autoname": "naming_series:",
+ "autoname": "format:{property_number}-{#####}",
  "creation": "2019-05-23 11:13:59.166874",
  "doctype": "DocType",
  "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
-  "naming_series",
   "title",
   "property_number",
   "owner_name",
-  "property_type",
+  "property_category",
   "column_break_3",
   "street_name",
   "occupier_name",
-  "property_description",
+  "property_type",
   "property_value",
-  "tax_section",
-  "tax",
-  "section_break_12",
-  "c_house_tax",
-  "p_house_tax",
-  "column_break_10",
-  "c_water_tax",
-  "p_water_tax",
-  "column_break0_column",
-  "c_sp_water_tax",
-  "p_sp_water_tax",
-  "0_column",
-  "c_cleaning_tax",
-  "p_cleaning_tax",
-  "column_break_21",
-  "c_sewer_tax",
-  "pre_sewer_tax",
-  "column_break_24",
-  "c_light_tax",
-  "p_light_tax",
-  "column_break_27",
-  "c_taluka_tax",
-  "p_taluka_tax",
-  "column_break_30",
-  "c_dist_tax",
-  "p_dist_tax",
-  "column_break_33",
-  "c_total_tax",
-  "p_total_tax",
-  "column_break_36",
+  "property_tax_section",
+  "get_property_taxes",
+  "property_tax",
   "yojna_section",
   "yojana",
   "yojana_name",
@@ -67,9 +39,10 @@
   },
   {
    "fieldname": "owner_name",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Owner Name"
+   "label": "Owner Name",
+   "options": "Contact"
   },
   {
    "fieldname": "occupier_name",
@@ -78,110 +51,14 @@
   },
   {
    "fieldname": "property_type",
-   "fieldtype": "Select",
-   "label": "Property type",
-   "options": "\nR.C.C. \u0a93\u0ab0\u0aa1\u0ac0 \u0ab5\u0abe\u0ab3\u0ac1\u0a82 \u0aae\u0a95\u0abe\u0aa8\nR.C.C. \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0acb\n\u0a88\u0a82\u0a9f \u0ab8\u0abf\u0aae\u0ac7\u0aa8\u0acd\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0ac0 \u0aa6\u0ac1\u0a95\u0abe\u0aa8\n\u0a88\u0a82\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0acb \u0a96\u0a82\u0aa1 \u0ae7 \u0aa5\u0ac0 \u0aea\n\u0a88\u0a82\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0ac0 \u0a93\u0ab0\u0aa1\u0ac0"
-  },
-  {
-   "fieldname": "property_description",
-   "fieldtype": "Select",
-   "label": "Property Description",
-   "options": "\nR.C.C. \u0a93\u0ab0\u0aa1\u0ac0 \u0ab5\u0abe\u0ab3\u0ac1\u0a82 \u0aae\u0a95\u0abe\u0aa8\nR.C.C. \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0acb\n\u0a88\u0a82\u0a9f \u0ab8\u0abf\u0aae\u0ac7\u0aa8\u0acd\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0ac0 \u0aa6\u0ac1\u0a95\u0abe\u0aa8\n\u0a88\u0a82\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0acb \u0a96\u0a82\u0aa1 \u0ae7 \u0aa5\u0ac0 \u0aea\n\u0a88\u0a82\u0a9f \u0aaa\u0aa4\u0ab0\u0abe \u0ab5\u0abe\u0ab3\u0ac0 \u0a93\u0ab0\u0aa1\u0ac0"
+   "fieldtype": "Link",
+   "label": "Property Type",
+   "options": "Property Type"
   },
   {
    "fieldname": "property_value",
    "fieldtype": "Float",
    "label": "Property Value"
-  },
-  {
-   "fieldname": "c_house_tax",
-   "fieldtype": "Float",
-   "label": "Current House Tax"
-  },
-  {
-   "fieldname": "c_water_tax",
-   "fieldtype": "Float",
-   "label": "Current Water Tax"
-  },
-  {
-   "fieldname": "c_sp_water_tax",
-   "fieldtype": "Float",
-   "label": "Current Sp Water Tax"
-  },
-  {
-   "fieldname": "c_cleaning_tax",
-   "fieldtype": "Float",
-   "label": "Current Cleaning Tax"
-  },
-  {
-   "fieldname": "c_sewer_tax",
-   "fieldtype": "Float",
-   "label": "Current Sewer Tax"
-  },
-  {
-   "fieldname": "c_light_tax",
-   "fieldtype": "Float",
-   "label": "Current  Light Tax"
-  },
-  {
-   "fieldname": "c_taluka_tax",
-   "fieldtype": "Float",
-   "label": "Current  Taluka Tax"
-  },
-  {
-   "fieldname": "c_dist_tax",
-   "fieldtype": "Float",
-   "label": "Current  Dist Tax"
-  },
-  {
-   "fieldname": "c_total_tax",
-   "fieldtype": "Float",
-   "label": "Current  Total Tax"
-  },
-  {
-   "fieldname": "p_house_tax",
-   "fieldtype": "Float",
-   "label": "Previous House Tax"
-  },
-  {
-   "fieldname": "p_water_tax",
-   "fieldtype": "Float",
-   "label": "Previous Water Tax"
-  },
-  {
-   "fieldname": "p_sp_water_tax",
-   "fieldtype": "Float",
-   "label": "Previous Sp Water Tax"
-  },
-  {
-   "fieldname": "p_cleaning_tax",
-   "fieldtype": "Float",
-   "label": "Previous Cleaning Tax"
-  },
-  {
-   "fieldname": "pre_sewer_tax",
-   "fieldtype": "Float",
-   "label": "Previous Sewer Tax"
-  },
-  {
-   "fieldname": "p_light_tax",
-   "fieldtype": "Float",
-   "label": "Previous  Light Tax"
-  },
-  {
-   "fieldname": "p_taluka_tax",
-   "fieldtype": "Float",
-   "label": "Previous  Taluka Tax"
-  },
-  {
-   "fieldname": "p_dist_tax",
-   "fieldtype": "Float",
-   "label": "Previous  Dist Tax"
-  },
-  {
-   "fieldname": "p_total_tax",
-   "fieldtype": "Float",
-   "label": "Previous  Total Tax"
   },
   {
    "fieldname": "yojana",
@@ -212,48 +89,7 @@
    "label": "Remark Name"
   },
   {
-   "fieldname": "tax_section",
-   "fieldtype": "Section Break",
-   "label": "Tax"
-  },
-  {
    "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_10",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break0_column",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "0_column",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_21",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_24",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_27",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_30",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_33",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_36",
    "fieldtype": "Column Break"
   },
   {
@@ -262,32 +98,35 @@
    "label": "Yojna"
   },
   {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Series",
-   "options": "Pr-",
-   "read_only": 1,
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
    "fieldname": "title",
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Title"
   },
   {
-   "fieldname": "section_break_12",
-   "fieldtype": "Section Break"
+   "fieldname": "property_tax_section",
+   "fieldtype": "Section Break",
+   "label": "Property Tax"
   },
   {
-   "fieldname": "tax",
+   "fieldname": "property_tax",
    "fieldtype": "Table",
-   "label": "Tax",
-   "options": "Tax_Akarni"
+   "label": "Property Tax",
+   "options": "Property Tax"
+  },
+  {
+   "fieldname": "property_category",
+   "fieldtype": "Link",
+   "label": "Property Category",
+   "options": "Property Category"
+  },
+  {
+   "fieldname": "get_property_taxes",
+   "fieldtype": "Button",
+   "label": "Get Property Taxes"
   }
  ],
- "modified": "2019-05-24 17:56:13.927562",
+ "modified": "2019-05-25 11:47:28.702191",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",
