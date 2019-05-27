@@ -33,9 +33,9 @@
   },
   {
    "fieldname": "street_name",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Street Name",
-   "options": "\n\u0aa6\u0ab0\u0ab5\u0abe\u0a9c\u0abe \u0aaa\u0abe\u0ab8\u0ac7 \u0ab0\u0abe\u0ab5\u0ab3 \u0ab5\u0abe\u0ab8\n\u0aac\u0a9c\u0abe\u0ab0 \u0ab0\u0acb\u0aa1\n\u0ab0\u0abe\u0a9c\u0abe\u0aa3\u0ac0\u0aa8\u0acb \u0aae\u0abe\u0aa2"
+   "options": "Street Details"
   },
   {
    "fieldname": "owner_name",
@@ -126,7 +126,7 @@
    "label": "Get Property Taxes"
   }
  ],
- "modified": "2019-05-25 11:47:28.702191",
+ "modified": "2019-05-26 12:42:46.688690",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",
