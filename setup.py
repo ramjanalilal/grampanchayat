@@ -15,7 +15,7 @@ with open('grampanchayat/__init__.py', 'rb') as f:
 setup(
 	name='grampanchayat',
 	version=version,
-	description='Panchayat System',
+	description='Gram Panchayat System',
 	author='FinForce Consulting LLP',
 	author_email='ramjan@finforce.in',
 	packages=find_packages(),

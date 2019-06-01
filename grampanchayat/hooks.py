@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 from . import __version__ as app_version
 
 app_name = "grampanchayat"
-app_title = "GramPanchayat"
+app_title = "Gram Panchayat"
 app_publisher = "FinForce Consulting LLP"
-app_description = "Panchayat System"
-app_icon = "octicon octicon-file-directory"
-app_color = "grey"
+app_description = "Gram Panchayat System"
+app_icon = "fa fa-home"
+app_color = "green"
 app_email = "ramjan@finforce.in"
 app_license = "MIT"
 

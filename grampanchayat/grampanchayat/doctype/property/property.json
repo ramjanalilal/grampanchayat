@@ -1,5 +1,5 @@
 {
- "autoname": "format:{property_number}-{#####}",
+ "autoname": "field:property_number",
  "creation": "2019-05-23 11:13:59.166874",
  "doctype": "DocType",
  "document_type": "Document",
@@ -46,8 +46,9 @@
   },
   {
    "fieldname": "occupier_name",
-   "fieldtype": "Data",
-   "label": "Occupier Name"
+   "fieldtype": "Link",
+   "label": "Occupier Name",
+   "options": "Contact"
   },
   {
    "fieldname": "property_type",
@@ -126,7 +127,7 @@
    "label": "Get Property Taxes"
   }
  ],
- "modified": "2019-05-26 12:42:46.688690",
+ "modified": "2019-06-01 12:38:50.916775",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",
