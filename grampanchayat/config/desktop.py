@@ -6,9 +6,9 @@ def get_data():
 	return [
 		{
 			"module_name": "GramPanchayat",
-			"color": "grey",
-			"icon": "octicon octicon-file-directory",
+			"color": "green",
+			"icon": "fa fa-home",
 			"type": "module",
-			"label": _("GramPanchayat")
+			"label": _("Gram Panchayat")
 		}
 	]

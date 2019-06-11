@@ -1,5 +1,5 @@
 {
- "autoname": "format:{property_number}-{#####}",
+ "autoname": "field:property_number",
  "creation": "2019-05-23 11:13:59.166874",
  "doctype": "DocType",
  "document_type": "Document",
@@ -33,9 +33,9 @@
   },
   {
    "fieldname": "street_name",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Street Name",
-   "options": "\n\u0aa6\u0ab0\u0ab5\u0abe\u0a9c\u0abe \u0aaa\u0abe\u0ab8\u0ac7 \u0ab0\u0abe\u0ab5\u0ab3 \u0ab5\u0abe\u0ab8\n\u0aac\u0a9c\u0abe\u0ab0 \u0ab0\u0acb\u0aa1\n\u0ab0\u0abe\u0a9c\u0abe\u0aa3\u0ac0\u0aa8\u0acb \u0aae\u0abe\u0aa2"
+   "options": "Street Details"
   },
   {
    "fieldname": "owner_name",
@@ -46,8 +46,9 @@
   },
   {
    "fieldname": "occupier_name",
-   "fieldtype": "Data",
-   "label": "Occupier Name"
+   "fieldtype": "Link",
+   "label": "Occupier Name",
+   "options": "Contact"
   },
   {
    "fieldname": "property_type",
@@ -126,7 +127,7 @@
    "label": "Get Property Taxes"
   }
  ],
- "modified": "2019-05-25 11:47:28.702191",
+ "modified": "2019-06-01 12:38:50.916775",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",

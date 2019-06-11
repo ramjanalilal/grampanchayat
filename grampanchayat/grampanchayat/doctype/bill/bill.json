@@ -1,0 +1,37 @@
+{
+ "creation": "2019-06-01 13:23:08.102658",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bill_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "bill_date",
+   "fieldtype": "Date",
+   "label": "Bill Date "
+  }
+ ],
+ "modified": "2019-06-01 13:24:30.654430",
+ "modified_by": "Administrator",
+ "module": "GramPanchayat",
+ "name": "Bill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "track_changes": 1
+}
