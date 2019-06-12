@@ -20,7 +20,7 @@ frappe.ui.form.on('Property', {
             frm.set_value("occupier_name", frm.doc.owner_name);
         }
     },
-    get_property_taxes: function(frm) {
+   /* get_property_taxes: function(frm) {
         frappe.call({
             method: "frappe.client.get_list",
             args: {
@@ -45,5 +45,5 @@ frappe.ui.form.on('Property', {
                 }
             }
         });
-    }
+    }*/
 });
