@@ -24,23 +24,20 @@ frappe.ui.form.on('Property', {
 			method: "frappe.client.get_list",
 			args: {
 				doctype: "Tax",
-				fields: ["tax_name", "taxable_tax", "default_rate", "percentage_of_property_value"],
+				fields: "*",
 				limit_page_length: 30
 			},
 			callback: function(r) {
 				//frappe.msgprint("call back fired");
-				//console.log(r);
 				if (r.message) {
 					for (var row in r.message) {
-						console.log(frm.doc.property_value);
 						var child = frm.add_child("property_tax");
 						child.tax = r.message[row].tax_name;
-						if (r.message[row].default_rate = 0) {
+						if (r.message[row].default_rate == 0) {
+							//frappe.msgprint("Default rate " + r.message[row].default_rate + " is set for " + r.message[row].tax_name);
 							child.amount = r.message[row].percentage_of_property_value * frm.doc.property_value;
 						} else {
-							console.log(r.message[row].tax_name);
-							console.log(r.message[row].percentage_of_property_value);
-							console.log(r.message[row].default_rate);
+							//frappe.msgprint("Default rate " + r.message[row].default_rate + " is set for " + r.message[row].tax_name);
 							child.amount = r.message[row].default_rate;
 						}
 					}
