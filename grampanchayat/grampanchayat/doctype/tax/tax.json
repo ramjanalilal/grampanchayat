@@ -7,8 +7,8 @@
  "field_order": [
   "tax_name",
   "default_rate",
-  "percentage_of_property_value",
   "taxable_tax",
+  "percentage_of_property_value",
   "taxable_tax_percentage",
   "column_break_3",
   "tax_description"
@@ -32,10 +32,10 @@
   {
    "fieldname": "percentage_of_property_value",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Percentage of property value"
   },
   {
-   "default": "0",
    "fieldname": "taxable_tax",
    "fieldtype": "Check",
    "label": "Taxable Tax "
@@ -44,16 +44,17 @@
    "depends_on": "eval:doc.taxable_tax==0",
    "fieldname": "taxable_tax_percentage",
    "fieldtype": "Percent",
+   "in_list_view": 1,
    "label": "Taxable Tax Percentage "
   },
   {
    "fieldname": "default_rate",
    "fieldtype": "Currency",
-   "label": "Default Rate",
-   "precision": "2"
+   "in_list_view": 1,
+   "label": "Default Rate"
   }
  ],
- "modified": "2019-06-17 13:28:24.646316",
+ "modified": "2019-06-18 21:35:41.444049",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Tax",
