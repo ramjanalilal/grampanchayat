@@ -66,7 +66,12 @@ frappe.ui.form.on('Property', {
 					for (var row in r.message) {
 						var child = frm.add_child("property_tax");
 						child.tax = r.message[row].tax_name;
-						child.amount = taxable_tax_total * r.message[row].taxable_tax_percentage / 100;
+						if (r.message[row].default_rate == 0) {
+							child.amount = taxable_tax_total * r.message[row].taxable_tax_percentage / 100;
+						} else {
+							child.amount = r.message[row].default_rate;
+						}
+						
 					}
 					refresh_field("property_tax");
 				}
