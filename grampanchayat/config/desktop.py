@@ -6,7 +6,7 @@ def get_data():
 	return [
 		{
 			"module_name": "GramPanchayat",
-			"color": "green",
+			"color": "Black",
 			"icon": "fa fa-home",
 			"type": "module",
 			"label": _("Gram Panchayat")
