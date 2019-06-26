@@ -15,7 +15,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Tax",
-   "options": "Tax"
+   "options": "Tax",
+   "read_only": 1
   },
   {
    "fieldname": "previous_amount",
@@ -28,7 +29,8 @@
    "fieldname": "current_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Current Amount"
+   "label": "Current Amount",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
@@ -39,7 +41,7 @@
   }
  ],
  "istable": 1,
- "modified": "2019-06-26 23:19:23.662672",
+ "modified": "2019-06-27 00:29:05.336898",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Bill Tax",
