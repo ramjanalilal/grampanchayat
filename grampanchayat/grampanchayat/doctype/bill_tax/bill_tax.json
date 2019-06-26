@@ -1,0 +1,52 @@
+{
+ "creation": "2019-06-26 22:50:31.619110",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tax",
+  "previous_amount",
+  "current_amount",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "tax",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tax",
+   "options": "Tax"
+  },
+  {
+   "fieldname": "previous_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Previous Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Current Amount"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-06-26 23:19:23.662672",
+ "modified_by": "Administrator",
+ "module": "GramPanchayat",
+ "name": "Bill Tax",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

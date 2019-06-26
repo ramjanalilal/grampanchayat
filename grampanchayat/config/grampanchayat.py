@@ -50,12 +50,7 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Property Tax",
-					"onboard": 1,
-				},
-				{
-					"type": "doctype",
-					"name": "Village Settings",
+					"name": "Village Setting",
 					"onboard": 1,
 				},
 			]
