@@ -7,6 +7,7 @@ frappe.ui.form.on('Bill', {
 	// }
 	bill_property_number: function(frm) {
 		var total_current_tax = 0;
+		var total_previous_tax = 0;
 		//frappe.msgprint("Testing...");
 		//Taxable tax
 		frappe.call({
@@ -15,10 +16,12 @@ frappe.ui.form.on('Bill', {
 				doctype: "Property Tax",
 				fields: "*",
 				filters: {"parent": frm.doc.bill_property_number},
+				parent: "Property",
 				limit_page_length: 30
 			},
 			callback: function(r) {
 				r.message.sort();
+				//console.log(r.message);
 				//frappe.msgprint("call back fired");
 				if (r.message) {
 					for (var row in r.message) {
@@ -26,11 +29,13 @@ frappe.ui.form.on('Bill', {
 						child.tax = r.message[row].tax;
 						child.current_amount = r.message[row].amount;
 						total_current_tax += child.current_amount;
+						frappe.msgprint("Total current amount = " + total_current_tax);
 					}
 					refresh_field("bill_taxes");
 				}
 			}
 		});
-		frm.doc.total_current_amount = total_current_tax;
+		frm.set_value("total_current_amount", total_current_tax);
+		refresh_field("total_current_amount");
 	}
 });
