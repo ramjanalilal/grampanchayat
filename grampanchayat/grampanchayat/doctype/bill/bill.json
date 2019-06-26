@@ -1,5 +1,5 @@
 {
- "autoname": "field:bill_property_number",
+ "autoname": "format:{#####}",
  "creation": "2019-06-12 13:35:58.868001",
  "doctype": "DocType",
  "document_type": "Document",
@@ -7,12 +7,21 @@
  "field_order": [
   "bill_date",
   "column_break_2",
-  "bill_property_number"
+  "bill_property_number",
+  "section_break_4",
+  "bill_taxes",
+  "section_break_6",
+  "total_previous_amount",
+  "column_break_8",
+  "total_current_amount",
+  "total_bill_amount"
  ],
  "fields": [
   {
+   "default": "Today",
    "fieldname": "bill_date",
    "fieldtype": "Date",
+   "in_list_view": 1,
    "label": "Bill Date "
   },
   {
@@ -27,9 +36,48 @@
    "label": "Bill Property Number ",
    "options": "Property",
    "unique": 1
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bill_taxes",
+   "fieldtype": "Table",
+   "label": "Bill Taxes",
+   "options": "Bill Tax"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_previous_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Previous Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_current_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Current Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_bill_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Bill Amount",
+   "read_only": 1
   }
  ],
- "modified": "2019-06-12 13:39:28.104860",
+ "modified": "2019-06-26 22:57:53.540683",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Bill",
