@@ -1,6 +1,11 @@
 // Copyright (c) 2019, FinForce Consulting LLP and contributors
 // For license information, please see license.txt
 frappe.ui.form.on('Property', {
+	refresh: function(frm) {
+		cur_frm.add_custom_button(__("Make Pending Bills"), function() {
+			create_bills_for_year(cur_frm);
+		});
+	},
 	onload: function(frm) {
 		frm.set_query("property_type", function() {
 			return {
@@ -77,5 +82,24 @@ frappe.ui.form.on('Property', {
 				}
 			}
 		});
-	}
+	},
 });
+
+var create_bills_for_year = function(frm){
+	frappe.confirm(
+		'Are you sure to initiate this long process?',
+		function(){
+			frappe.call({
+				method: "grampanchayat.grampanchayat.doctype.bill.bill.create_bills_for_year",
+				args: {},
+				callback: function(){
+					cur_frm.reload_doc();
+				}
+			});
+		},
+		function(){
+			frappe.msgprint(__("Closed before starting long process!"));
+			window.close();
+		}
+	);
+}

@@ -60,6 +60,11 @@ def get_data():
 				},
 				{
 					"type": "doctype",
+					"name": "Fiscal Year",
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
 					"name": "Village Setting",
 					"onboard": 1,
 				},
