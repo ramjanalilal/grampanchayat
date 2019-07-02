@@ -1,0 +1,59 @@
+{
+ "autoname": "field:year_name",
+ "creation": "2019-07-02 08:11:43.110039",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "year_name",
+  "disabled",
+  "year_start_date",
+  "year_end_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "year_name",
+   "fieldtype": "Data",
+   "label": " Year Name",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "year_start_date",
+   "fieldtype": "Date",
+   "label": "Year Start Date"
+  },
+  {
+   "fieldname": "year_end_date",
+   "fieldtype": "Date",
+   "label": "Year End Date"
+  }
+ ],
+ "modified": "2019-07-02 08:13:29.472011",
+ "modified_by": "Administrator",
+ "module": "GramPanchayat",
+ "name": "Fiscal Year",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,5 +1,5 @@
 {
- "autoname": "format:{#####}",
+ "autoname": "format:{bill_property_number}-{fiscal_year}-{#}",
  "creation": "2019-06-12 13:35:58.868001",
  "doctype": "DocType",
  "document_type": "Document",
@@ -7,6 +7,7 @@
  "field_order": [
   "bill_date",
   "column_break_2",
+  "fiscal_year",
   "bill_property_number",
   "section_break_4",
   "bill_taxes",
@@ -107,9 +108,15 @@
    "fieldtype": "Currency",
    "label": "New Pending Amount",
    "read_only": 1
+  },
+  {
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "Fiscal Year",
+   "options": "Fiscal Year"
   }
  ],
- "modified": "2019-06-27 01:44:59.210931",
+ "modified": "2019-07-02 08:31:11.733010",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Bill",

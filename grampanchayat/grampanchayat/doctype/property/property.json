@@ -14,6 +14,7 @@
   "occupier_name",
   "property_type",
   "property_value",
+  "billable",
   "property_tax_section",
   "get_property_taxes",
   "property_tax",
@@ -125,9 +126,15 @@
    "fieldname": "get_property_taxes",
    "fieldtype": "Button",
    "label": "Get Property Taxes"
+  },
+  {
+   "default": "1",
+   "fieldname": "billable",
+   "fieldtype": "Check",
+   "label": "Billable"
   }
  ],
- "modified": "2019-06-01 12:38:50.916775",
+ "modified": "2019-07-02 08:25:16.489205",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",
