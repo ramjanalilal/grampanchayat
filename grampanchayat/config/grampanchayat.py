@@ -18,6 +18,11 @@ def get_data():
 					"name": "Receipt",
 					"onboard": 0,
 				},
+				{
+					"type": "doctype",
+					"name": "Expense",
+					"onboard": 0,
+				},
 			]
 		},
 		{
@@ -46,6 +51,11 @@ def get_data():
 				{
 					"type": "doctype",
 					"name": "Property Category",
+					"onboard": 1,
+				},
+				{
+					"type": "doctype",
+					"name": "Expense Type",
 					"onboard": 1,
 				},
 				{

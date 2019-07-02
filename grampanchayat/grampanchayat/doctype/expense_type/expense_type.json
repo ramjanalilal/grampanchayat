@@ -1,48 +1,46 @@
 {
- "creation": "2019-06-26 21:29:51.920062",
+ "autoname": "field:expense_type",
+ "creation": "2019-06-29 20:58:41.009656",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "village_name",
-  "taluko",
-  "district",
-  "begining_date"
+  "expense_type",
+  "description",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "village_name",
+   "fieldname": "expense_type",
    "fieldtype": "Data",
-   "label": "Village Name "
+   "label": "Expense Type",
+   "unique": 1
   },
   {
-   "fieldname": "taluko",
+   "fieldname": "description",
    "fieldtype": "Data",
-   "label": "Taluko "
+   "label": "Description"
   },
   {
-   "fieldname": "district",
-   "fieldtype": "Data",
-   "label": "District "
-  },
-  {
-   "fieldname": "begining_date",
-   "fieldtype": "Date",
-   "label": "Begining Date"
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
   }
  ],
- "issingle": 1,
- "modified": "2019-06-29 20:42:54.578346",
+ "modified": "2019-06-29 20:58:53.393371",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
- "name": "Village Setting",
+ "name": "Expense Type",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
+   "export": 1,
    "print": 1,
    "read": 1,
+   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1
