@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "tax_name",
+  "tax_sequence_no",
   "default_rate",
   "taxable_tax",
   "percentage_of_property_value",
@@ -36,6 +37,7 @@
    "label": "Percentage of property value"
   },
   {
+   "default": "0",
    "fieldname": "taxable_tax",
    "fieldtype": "Check",
    "label": "Taxable Tax "
@@ -52,9 +54,15 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Default Rate"
+  },
+  {
+   "fieldname": "tax_sequence_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Tax Sequence No"
   }
  ],
- "modified": "2019-06-18 21:35:41.444049",
+ "modified": "2019-07-03 07:20:05.269630",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Tax",

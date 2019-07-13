@@ -1,5 +1,5 @@
 {
- "creation": "2019-06-26 22:50:31.619110",
+ "creation": "2019-07-03 08:26:47.268018",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -8,8 +8,8 @@
   "previous_amount",
   "current_amount",
   "total_amount",
-  "original_previous_amount",
-  "original_current_amount"
+  "bill_previous_amount",
+  "bill_current_amount"
  ],
  "fields": [
   {
@@ -42,25 +42,23 @@
    "read_only": 1
   },
   {
-   "fetch_from": "previous_amount",
-   "fieldname": "original_previous_amount",
+   "fieldname": "bill_previous_amount",
    "fieldtype": "Currency",
-   "label": "Original Previous Amount",
+   "label": "Bill Previous Amount",
    "read_only": 1
   },
   {
-   "fetch_from": "current_amount",
-   "fieldname": "original_current_amount",
+   "fieldname": "bill_current_amount",
    "fieldtype": "Currency",
-   "label": "Original Current Amount",
+   "label": "Bill Current Amount",
    "read_only": 1
   }
  ],
  "istable": 1,
- "modified": "2019-07-13 01:54:44.696134",
+ "modified": "2019-07-13 03:02:32.430652",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
- "name": "Bill Tax",
+ "name": "Receipt Tax",
  "owner": "Administrator",
  "permissions": [],
  "quick_entry": 1,

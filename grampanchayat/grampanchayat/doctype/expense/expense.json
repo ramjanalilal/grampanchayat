@@ -9,15 +9,22 @@
   "type",
   "section_break_4",
   "remarks",
+  "section_break_6",
   "amount",
   "reference_no",
+  "column_break_8",
+  "paid_to",
+  "section_break_10",
   "amended_from"
  ],
  "fields": [
   {
+   "default": "Today",
    "fieldname": "expense_date",
    "fieldtype": "Date",
-   "label": "Expense Date"
+   "in_list_view": 1,
+   "label": "Expense Date",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_2",
@@ -26,8 +33,10 @@
   {
    "fieldname": "type",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Type",
-   "options": "Expense Type"
+   "options": "Expense Type",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_4",
@@ -41,7 +50,9 @@
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
-   "label": "Amount"
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
   },
   {
    "description": "Enter cheque number or other reference number",
@@ -57,10 +68,29 @@
    "options": "Expense",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "paid_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Paid To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2019-06-29 21:01:38.337668",
+ "modified": "2019-07-12 23:31:13.025655",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Expense",
@@ -76,6 +106,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
