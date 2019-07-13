@@ -1,18 +1,95 @@
 {
+ "allow_rename": 1,
+ "autoname": "format:{bill_being_settled}-{#####}",
  "creation": "2019-06-10 11:54:47.983958",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "data"
+  "receipt_date",
+  "fiscal_year",
+  "column_break_3",
+  "bill_being_settled",
+  "occupier",
+  "section_break_6",
+  "amount_received",
+  "receipt_tax_details_section",
+  "receipt_tax",
+  "section_break_8",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "data",
-   "fieldtype": "Data",
-   "label": "Data "
+   "fetch_from": "bill_being_settled.fiscal_year",
+   "fieldname": "fiscal_year",
+   "fieldtype": "Link",
+   "label": "FIscal Year",
+   "options": "Fiscal Year",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bill_being_settled",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bill being settled",
+   "options": "Bill",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bill_being_settled.occupier",
+   "fieldname": "occupier",
+   "fieldtype": "Link",
+   "label": "Occupier",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receipt_tax_details_section",
+   "fieldtype": "Section Break",
+   "label": "Receipt Tax Details"
+  },
+  {
+   "fieldname": "receipt_tax",
+   "fieldtype": "Table",
+   "label": "Receipt Tax",
+   "options": "Receipt Tax",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "receipt_date",
+   "fieldtype": "Date",
+   "label": "Receipt Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Receipt",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amount_received",
+   "fieldtype": "Currency",
+   "label": "Amount received"
   }
  ],
- "modified": "2019-06-10 11:54:50.708673",
+ "is_submittable": 1,
+ "modified": "2019-07-13 02:04:04.419585",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Receipt",
@@ -28,10 +105,10 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "ASC",
  "track_changes": 1

@@ -26,7 +26,6 @@ frappe.ui.form.on('Bill', {
 				limit_page_length: 30
 			},
 			callback: function(r) {
-				r.message.sort();
 				//console.log(r.message);
 				//frappe.msgprint("call back fired");
 				if (r.message) {
@@ -36,6 +35,8 @@ frappe.ui.form.on('Bill', {
 						child.previous_amount = r.message[row].previous_amount;
 						child.current_amount = r.message[row].amount;
 						child.total_amount = child.previous_amount + child.current_amount;
+						child.original_previous_amount = r.message[row].previous_amount;
+						child.original_current_amount = r.message[row].amount;
 						frm.doc.total_previous_amount += child.previous_amount;
 						frm.doc.total_current_amount += child.current_amount;
 						frm.doc.total_bill_amount += child.total_amount;

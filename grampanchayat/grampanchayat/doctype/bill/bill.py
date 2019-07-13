@@ -10,6 +10,7 @@ from frappe.model.document import Document
 from dateutil.relativedelta import relativedelta
 from frappe.utils import cint, format_datetime,get_datetime_str,now_datetime,add_days,today,formatdate,date_diff,getdate,add_months,flt, nowdate, fmt_money, add_to_date, DATE_FORMAT, rounded
 from frappe import _
+from operator import itemgetter
 
 class Bill(Document):
 	pass
@@ -34,10 +35,20 @@ def create_bills_for_year(billdate=None):
 		)
 	frappe.msgprint("Number of properties found to create bills " + str(len(unbilled_properties)))
 
+	# Get preivous_amount into a list
+	# Assumed that all receipts in system will be considered for calculations
+	property_tax_previous_amount_list = frappe.db.sql('''select b.bill_property_number, bt.tax,
+		sum(bt.current_amount) - sum(ifnull(total_received, 0)) as tax_previous_amount
+		from `tabBill` b
+		inner join `tabBill Tax` bt on b.name = bt.parent
+		left outer join `tabReceipt Tax` rt on rt.tax = bt.tax and rt.docstatus = 1
+		where b.docstatus = 1 and b.bill_date <= %s
+		group by bill_property_number''', (billdate))
+
 	unbilled_properties = frappe.db.sql(
 		'''select name, owner_name, occupier_name from `tabProperty` where billable = 1
 		and name not in	(select bill_property_number from `tabBill` where fiscal_year = %s)
-		LIMIT 10''',
+		LIMIT 50''',
 		(fiscal_year[0].name),
 		as_dict=1
 		)
@@ -52,16 +63,31 @@ def create_bills_for_year(billdate=None):
 		bill.bill_property_number = property.name
 		# # Get all taxes for the property and add them to the bill taxes table
 		# bill.taxes = 
+		property_tax_list = frappe.get_list("Property Tax", filters={"parent": property.name}, fields={"parent", "previous_amount", "tax", "amount"})
 		total_current_amount = 0
-		for tax in frappe.get_list("Property Tax", filters={"parent": property.name}, fields={"parent", "tax", "amount"}):
+		for tax in property_tax_list:
+			tax_previous_amount = 0
 			bill_row = bill.append("bill_taxes")
 			bill_row.tax = tax.tax
+			#tom_index = next((index for (index, d) in enumerate(lst) if d["name"] == "Tom"), None)
+			for property_tax_previous_amount in property_tax_list:
+				if property_tax_previous_amount["bill_property_number"] == property.name and property_tax_previous_amount["tax"]:
+					frappe.msgprint("Property Previous tax: " + str(property_tax_previous_amount["tax"]) )
+					# previous_amount_index = itemgetter(*mykeys)(mydict) next((index for (index, d) in enumerate(previous_amount_list) if d["bill_property_number"] == property.name), None)
+			# if previous_amount_index:
+			# 	tax_previous_amount = previous_amount_list[previous_amount_index].tax_previous_amount
+			bill_row.previous_amount = tax_previous_amount
 			bill_row.current_amount = tax.amount
+			bill_row.total_amount = tax_previous_amount + tax.amount
+			bill_row.original_previous_amount = tax_previous_amount
+			bill_row.original_current_amount = tax.amount
+			total_previous_amount += tax_previous_amount
 			total_current_amount += tax.amount
-			# loan_nfs_row = loan.append("loan_repayments_not_from_salary")
-			# loan_nfs_row.nfs_loan_repayment = doc.name
+
 		# Find total current amount and add value here
+		bill.total_previous_amount = total_previous_amount
 		bill.total_current_amount = total_current_amount
+		bill.total_bill_amount = total_previous_amount + total_current_amount
 		bill.total_received = 0
 		bill.bill_settled = False
 		bill.save(ignore_permissions = True)
