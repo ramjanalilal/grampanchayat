@@ -123,8 +123,7 @@
    "fieldname": "property_category",
    "fieldtype": "Link",
    "label": "Property Category",
-   "options": "Property Category",
-   "set_only_once": 1
+   "options": "Property Category"
   },
   {
    "fieldname": "get_property_taxes",
@@ -146,7 +145,7 @@
    "fieldtype": "Column Break"
   }
  ],
- "modified": "2019-07-12 21:58:32.279730",
+ "modified": "2019-07-22 08:47:06.344230",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Property",

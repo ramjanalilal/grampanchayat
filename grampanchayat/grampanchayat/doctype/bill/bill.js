@@ -23,6 +23,7 @@ frappe.ui.form.on('Bill', {
 				fields: "*",
 				filters: {"parent": frm.doc.bill_property_number},
 				parent: "Property",
+				order_by: "idx",
 				limit_page_length: 30
 			},
 			callback: function(r) {

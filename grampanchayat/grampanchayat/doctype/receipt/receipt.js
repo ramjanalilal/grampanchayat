@@ -13,11 +13,18 @@ frappe.ui.form.on('Receipt', {
 		})
 	},
 	amount_received: function(frm) {
+		if (frm.doc.amount_received > (frm.doc.total_bill_amount - frm.doc.total_received)) {
+			frm.doc.amount_received = 0
+			frm.doc.receipt_tax = []
+			frm.refresh_fields()
+			frappe.throw(__("Amount received cannot be more than pending amount. Please check the pending amount and update amount received!"))
+		}
+
 		var amount_remaining = frm.doc.amount_received;
 		var prev_amount_remaining = frm.doc.amount_received;
 		// Allocate amount to previous amounts
 		$.each(frm.doc.receipt_tax || [], function(i, row) {
-			// frappe.msgprint("prev test" + prev_amount_remaining + " " + amount_remaining);
+			frappe.msgprint("prev test" + prev_amount_remaining + " " + amount_remaining);
 			prev_amount_remaining = amount_remaining;
 			amount_remaining -= row.bill_previous_amount;
 			row.previous_amount = 0;
@@ -30,7 +37,7 @@ frappe.ui.form.on('Receipt', {
 		});
 		// Allocate amount to current amounts
 		$.each(frm.doc.receipt_tax || [], function(i, row) {
-			// frappe.msgprint("curr test" + prev_amount_remaining + " " + amount_remaining);
+			frappe.msgprint("curr test" + prev_amount_remaining + " " + amount_remaining);
 			prev_amount_remaining = amount_remaining;
 			amount_remaining -= row.bill_current_amount;
 			row.current_amount = 0;
@@ -71,7 +78,8 @@ frappe.ui.form.on('Receipt', {
 					doctype: "Bill Tax",
 					fields: ["parent", "tax", "previous_amount", "current_amount"],
 					filters: {"parent": frm.doc.bill_being_settled},
-					parent: "Bill"
+					parent: "Bill",
+					order_by: "idx"
 				},
 				callback: function(r) {
 					//console.log(r.message);

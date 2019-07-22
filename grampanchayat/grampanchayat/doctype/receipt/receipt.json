@@ -10,6 +10,8 @@
   "column_break_3",
   "bill_being_settled",
   "occupier",
+  "total_bill_amount",
+  "total_received",
   "section_break_6",
   "amount_received",
   "receipt_tax_details_section",
@@ -86,10 +88,24 @@
    "fieldname": "amount_received",
    "fieldtype": "Currency",
    "label": "Amount received"
+  },
+  {
+   "fetch_from": "bill_being_settled.total_bill_amount",
+   "fieldname": "total_bill_amount",
+   "fieldtype": "Currency",
+   "label": "Total Bill Amount",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bill_being_settled.total_received",
+   "fieldname": "total_received",
+   "fieldtype": "Currency",
+   "label": "Total Received",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2019-07-13 02:04:04.419585",
+ "modified": "2019-07-22 08:40:20.849773",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Receipt",
