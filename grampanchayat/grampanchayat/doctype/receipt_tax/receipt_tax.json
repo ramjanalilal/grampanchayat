@@ -13,6 +13,7 @@
  ],
  "fields": [
   {
+   "columns": 2,
    "fieldname": "tax",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -21,6 +22,7 @@
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "previous_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -28,6 +30,7 @@
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "current_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -35,6 +38,7 @@
    "read_only": 1
   },
   {
+   "columns": 2,
    "fieldname": "total_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
@@ -42,20 +46,24 @@
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "bill_previous_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Bill Previous Amount",
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "bill_current_amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Bill Current Amount",
    "read_only": 1
   }
  ],
  "istable": 1,
- "modified": "2019-07-13 03:02:32.430652",
+ "modified": "2019-07-22 08:54:08.895328",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Receipt Tax",
