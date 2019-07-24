@@ -49,21 +49,5 @@ frappe.ui.form.on('Bill', {
 				}
 			}
 		});
-	},
-	total_received: function(frm) {
-		//frappe.msgprint("Testing... if total_received is fired");
-		//Taxable tax
-		frm.doc.new_pending_amount = frm.doc.total_bill_amount - frm.doc.total_received;
-		if (frm.doc.total_bill_amount > frm.doc.total_received) {
-			//frappe.msgprint("bill is higher than received");
-			frm.set_value("bill_settled", "");
-			}
-		else {
-			//frappe.msgprint("bill is lower than received");
-			frm.set_value("bill_settled", "Checked");
-			//frappe.msgprint("Final settlement will be recorded");
-		}
-		refresh_field("new_pending_amount");
-		refresh_field("bill_settled");
 	}
 });
