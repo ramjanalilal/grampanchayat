@@ -71,10 +71,11 @@ def create_bills_for_year(billdate=None):
 			bill_row = bill.append("bill_taxes")
 			bill_row.tax = tax.tax
 			#tom_index = next((index for (index, d) in enumerate(lst) if d["name"] == "Tom"), None)
+
 			# Find out previous property amount.
-			for property_tax_previous_amount in property_tax_list:
-				if property_tax_previous_amount["parent"] == property.name and property_tax_previous_amount["tax"]:
-					frappe.msgprint("Property Previous tax: " + str(property_tax_previous_amount["tax"]) )
+			# for property_tax_previous_amount in property_tax_list:
+			# 	if property_tax_previous_amount["parent"] == property.name and property_tax_previous_amount["tax"]:
+			# 		frappe.msgprint("Property Previous tax: " + str(property_tax_previous_amount["tax"]) )
 					# previous_amount_index = itemgetter(*mykeys)(mydict) next((index for (index, d) in enumerate(previous_amount_list) if d["bill_property_number"] == property.name), None)
 			# if previous_amount_index:
 			# 	tax_previous_amount = previous_amount_list[previous_amount_index].tax_previous_amount

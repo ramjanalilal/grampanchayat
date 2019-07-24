@@ -1,4 +1,5 @@
 {
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:{bill_being_settled}-{#####}",
  "creation": "2019-06-10 11:54:47.983958",
@@ -105,17 +106,20 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2019-07-22 08:40:20.849773",
+ "modified": "2019-07-24 15:40:25.247427",
  "modified_by": "Administrator",
  "module": "GramPanchayat",
  "name": "Receipt",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
    "export": 1,
+   "import": 1,
    "print": 1,
    "read": 1,
    "report": 1,
